@@ -1,4 +1,5 @@
 import Welcome from "@/components/contents/Welcome";
+import Input from "@/components/input/Input";
 import NavBar from "@/components/navbar/NavBar";
 
 const Page = () => {
@@ -10,6 +11,7 @@ const Page = () => {
          <section>
             <Welcome />
          </section>
+         <Input />
       </>
    );
 };

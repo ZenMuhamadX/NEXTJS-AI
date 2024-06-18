@@ -7,18 +7,20 @@ import { House } from "phosphor-react";
 const NavBar = () => {
    return (
       <>
-         <div className="shadow-md shadow-orange-500 flex justify-between flex-row items-center p-4 bg-colors-dark text-colors-primary">
+         <div className="shadow-sm shadow-colors-accent flex justify-between flex-row items-center p-4 bg-colors-dark text-colors-primary">
             <div className="flex items-center gap-4">
-               <Image src="/logo.png" alt="Logo" width={30} height={30} /> /
-               <Link
-                  href="/"
-                  className="hover:text-gray-400 transition-all font-medium"
-               >
-                  <div className="flex gap-2">
-                     <House size={24} weight="bold" />
-                     HOME
-                  </div>
-               </Link>
+               <Image src="/logo.png" alt="Logo" width={25} height={25} />{" "}
+               <span className="font-thin text-xl italic">/</span>
+               <div className="hover:text-gray-400 transition-all">
+                  <Link href="/" className="font-medium">
+                     <div className="flex gap-1">
+                        <House size={18} weight="bold" />
+                        <span className="text-colors-primary text-sm hover:text-gray-400 transition-all">
+                           HOME
+                        </span>
+                     </div>
+                  </Link>
+               </div>
             </div>
             <div className="md:flex flex-row gap-2 ">
                <Link href="https://github.com/ZenMuhamadX/">
@@ -29,7 +31,7 @@ const NavBar = () => {
                         width={25}
                         height={20}
                      />
-                     GitHub
+                     <span className="hidden md:block">Github</span>
                   </div>
                </Link>
             </div>
