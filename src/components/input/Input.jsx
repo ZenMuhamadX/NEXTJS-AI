@@ -1,38 +1,42 @@
 "use client";
 import React, { useRef } from "react";
-import { PaperPlaneRight } from "phosphor-react";
-
+import ButtonSend, { handleInput } from "@/components/button/ButtonSend";
 const Input = () => {
-   const inputUser = useRef();
-   const handleInput = (e) => {
-      const Input = inputUser.current.value;
-      if (!Input || Input.trim() == "") return;
-      if (e.key == "Enter" || e.type == "click") {
+   const inputUser = useRef(null);
+
+   const handleChange = (e) => {
+      if (e.key === "Enter") {
          e.preventDefault();
-         console.log(Input);
+         handleInput(inputUser);
          inputUser.current.value = "";
       }
    };
+
    return (
       <>
-         <div className="flex justify-center items-center">
-            <div className="md:w-1/2 md:mt-16 w-full mt-64">
-               <div className="bg-colors-dark shadow-sm shadow-colors-primary rounded-se-xl rounded-ss-xl p-7 h-auto md:h-44">
-                  <div className="flex justify-center items-center md:p-4 text-colors-primary shadow-sm border  md:shadow-colors-primary rounded-md">
-                     <input
-                        className="flex-grow bg-transparent text-colors-primary placeholder-gray-500 border-none outline-none md:ml-0 ml-3"
-                        type="text"
-                        ref={inputUser}
-                        onKeyDown={handleInput}
-                        placeholder="Berikan pertanyaan Anda..."
-                     />
-                     <div className="bg-colors-accent rounded-lg flex justify-center items-center hover:bg-gray-600 transition-all md:w-20 md:h-10 w-10 h-10 m-1">
-                        <button onClick={handleInput}>
-                           <PaperPlaneRight size={30} />
-                        </button>
-                     </div>
-                  </div>
+         <div className="fixed bottom-0 w-full p-4">
+            <div className="max-w-screen-sm mx-auto flex items-center">
+               <div className="flex-1">
+                  <textarea
+                     ref={inputUser}
+                     placeholder="Berikan pertanyaan Anda..."
+                     className="border border-colors-accent bg-transparent text-colors-primary rounded-l-lg p-3 w-full focus:outline-none resize-none min-h-10 overflow-hidden"
+                     onKeyDown={handleChange}
+                     rows={1}
+                  ></textarea>
                </div>
+               <ButtonSend inputText={inputUser} />
+            </div>
+            <div className="absolute bottom-0.5 left-0 right-0 text-center">
+               <p className="text-xs text-colors-primary mx-auto max-w-screen-sm">
+                  Authors: Muhamad Nur Fauzan.{" "}
+                  <a
+                     className="underline hover:text-blue-600 transition-all font-medium italic"
+                     href="https://github.com/ZenMuhamadX/NEXTJS-AI/"
+                  >
+                     Repositories is here
+                  </a>
+               </p>
             </div>
          </div>
       </>

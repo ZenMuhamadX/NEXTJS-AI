@@ -11,7 +11,6 @@ const Page = () => {
          <section>
             <Welcome />
          </section>
-         <Input />
       </>
    );
 };

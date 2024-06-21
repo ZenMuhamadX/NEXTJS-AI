@@ -24,7 +24,7 @@ const NavBar = () => {
             </div>
             <div className="md:flex flex-row gap-2 ">
                <Link href="https://github.com/ZenMuhamadX/">
-                  <div className="hover:bg-gray-800 hover:scale-95 hover:text-colors-primary transition-all bg-black text-colors-primary font-medium border-b border-colors-primary rounded-md  w-auto h-auto py-1 px-4 justify-between flex gap-2">
+                  <div className="hover:bg-gray-800 hover:scale-95 hover:text-colors-primary transition-all bg-colors-dark text-colors-primary font-medium border-b border-colors-primary rounded-md  w-auto h-auto py-1 px-4 justify-between flex gap-2">
                      <Image
                         src="/github-mark-white.png"
                         alt=""
